@@ -2253,3 +2253,508 @@ Processing by ContentsController#index as */*
 Completed 200 OK in 62ms (Views: 61.7ms | ActiveRecord: 0.5ms | Allocations: 15833)
 
 
+Started POST "/contents" for ::1 at 2020-01-31 18:51:09 +0000
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContentsController#create as */*
+  Parameters: {"title"=>"Coronavirus update: Delta, American, United all suspend China flights", "url"=>"https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1", "image"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "description"=>"Coronaviruses are a group of viruses that cause diseases in mammals and birds. In humans, the viruses cause respiratory infections which are typically mild including the common cold but rarer forms like SARS, MERS and the currently outbreaking coronavirus can be lethal", "content"=>{"url"=>"https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1", "description"=>"Coronaviruses are a group of viruses that cause diseases in mammals and birds. In humans, the viruses cause respiratory infections which are typically mild including the common cold but rarer forms like SARS, MERS and the currently outbreaking coronavirus can be lethal", "image"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "title"=>"Coronavirus update: Delta, American, United all suspend China flights"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[36mContent Create (1.6ms)[0m  [1m[32mINSERT INTO "contents" ("url", "description", "image", "created_at", "updated_at", "user_id", "title") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["url", "https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1"], ["description", "https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"], ["image", "https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"], ["created_at", "2020-01-31 18:51:09.742316"], ["updated_at", "2020-01-31 18:51:09.742316"], ["user_id", 1], ["title", "Coronavirus update: Delta, American, United all suspend China flights"]]
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+Completed 200 OK in 47ms (Views: 0.7ms | ActiveRecord: 4.0ms | Allocations: 15909)
+
+
+Started GET "/contents" for ::1 at 2020-01-31 18:51:27 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (2.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 44ms (Views: 41.3ms | ActiveRecord: 2.4ms | Allocations: 17051)
+
+
+Started GET "/contents" for ::1 at 2020-01-31 18:55:52 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (0.6ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 64ms (Views: 60.7ms | ActiveRecord: 1.0ms | Allocations: 17005)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mContent Load (1.3ms)[0m  [1m[34mSELECT "contents".* FROM "contents" ORDER BY "contents"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT "contents".* FROM "contents" ORDER BY "contents"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mContent Destroy (3.7ms)[0m  [1m[31mDELETE FROM "contents" WHERE "contents"."id" = ?[0m  [["id", 15]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT "contents".* FROM "contents" ORDER BY "contents"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mContent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "contents" WHERE "contents"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/contents" for ::1 at 2020-01-31 18:57:50 +0000
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 37ms (Views: 30.4ms | ActiveRecord: 1.3ms | Allocations: 28913)
+
+
+Started GET "/contents" for ::1 at 2020-01-31 19:00:33 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (0.5ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 0.9ms | Allocations: 14695)
+
+
+Started POST "/contents" for ::1 at 2020-01-31 19:01:10 +0000
+Processing by ContentsController#create as */*
+  Parameters: {"title"=>"Coronavirus update: Delta, American, United all suspend China flights", "url"=>"https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1", "image"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "description"=>"Coronaviruses are a group of viruses that cause diseases in mammals and birds. In humans, the viruses cause respiratory infections which are typically mild including the common cold but rarer forms like SARS, MERS and the currently outbreaking coronavirus can be lethal", "content"=>{"url"=>"https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1", "description"=>"Coronaviruses are a group of viruses that cause diseases in mammals and birds. In humans, the viruses cause respiratory infections which are typically mild including the common cold but rarer forms like SARS, MERS and the currently outbreaking coronavirus can be lethal", "image"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "title"=>"Coronavirus update: Delta, American, United all suspend China flights"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[36mContent Create (3.9ms)[0m  [1m[32mINSERT INTO "contents" ("url", "description", "image", "created_at", "updated_at", "user_id", "title") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["url", "https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1"], ["description", "https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"], ["image", "https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"], ["created_at", "2020-01-31 19:01:10.914681"], ["updated_at", "2020-01-31 19:01:10.914681"], ["user_id", 1], ["title", "Coronavirus update: Delta, American, United all suspend China flights"]]
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 6.2ms | Allocations: 3889)
+
+
+Started GET "/contents" for ::1 at 2020-01-31 19:01:22 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (0.6ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.9ms | Allocations: 15851)
+
+
+Started GET "/contents" for ::1 at 2020-01-31 19:04:51 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (1.6ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 191ms (Views: 186.3ms | ActiveRecord: 2.1ms | Allocations: 15854)
+
+
+Started POST "/contents" for ::1 at 2020-01-31 19:10:51 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ContentsController#create as */*
+  Parameters: {"title"=>"Coronavirus update: Delta, American, United all suspend China flights", "url"=>"https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1", "image"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "description"=>"Coronaviruses are a group of viruses that cause diseases in mammals and birds. In humans, the viruses cause respiratory infections which are typically mild including the common cold but rarer forms like SARS, MERS and the currently outbreaking coronavirus can be lethal", "content"=>{"url"=>"https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1", "description"=>"Coronaviruses are a group of viruses that cause diseases in mammals and birds. In humans, the viruses cause respiratory infections which are typically mild including the common cold but rarer forms like SARS, MERS and the currently outbreaking coronavirus can be lethal", "image"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "title"=>"Coronavirus update: Delta, American, United all suspend China flights"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[36mContent Create (1.2ms)[0m  [1m[32mINSERT INTO "contents" ("url", "description", "image", "created_at", "updated_at", "user_id", "title") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["url", "https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1"], ["description", "https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"], ["image", "https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"], ["created_at", "2020-01-31 19:10:51.258774"], ["updated_at", "2020-01-31 19:10:51.258774"], ["user_id", 1], ["title", "Coronavirus update: Delta, American, United all suspend China flights"]]
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+Completed 200 OK in 20ms (Views: 1.4ms | ActiveRecord: 2.6ms | Allocations: 3523)
+
+
+Started GET "/contents" for ::1 at 2020-01-31 19:14:20 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (22.4ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 45ms (Views: 22.3ms | ActiveRecord: 22.7ms | Allocations: 17011)
+
+
+Started POST "/contents" for ::1 at 2020-01-31 19:14:56 +0000
+Processing by ContentsController#create as */*
+  Parameters: {"title"=>"c", "url"=>"https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1", "image"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "description"=>"d", "content"=>{"url"=>"https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1", "description"=>"d", "image"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "title"=>"c"}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[36mContent Create (2.9ms)[0m  [1m[32mINSERT INTO "contents" ("url", "description", "image", "created_at", "updated_at", "user_id", "title") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["url", "https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1"], ["description", "https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"], ["image", "https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"], ["created_at", "2020-01-31 19:14:56.430680"], ["updated_at", "2020-01-31 19:14:56.430680"], ["user_id", 1], ["title", "c"]]
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+Completed 200 OK in 19ms (Views: 0.6ms | ActiveRecord: 4.5ms | Allocations: 3502)
+
+
+Started GET "/contents" for ::1 at 2020-01-31 19:15:36 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (1.7ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 27ms (Views: 24.6ms | ActiveRecord: 2.0ms | Allocations: 18142)
+
+
+Started POST "/contents" for ::1 at 2020-01-31 19:16:04 +0000
+Processing by ContentsController#create as */*
+  Parameters: {"title"=>"c", "url"=>"https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1", "image"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "description"=>"ccc", "content"=>{"url"=>"https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1", "description"=>"ccc", "image"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "title"=>"c"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[36mContent Create (0.5ms)[0m  [1m[32mINSERT INTO "contents" ("url", "description", "image", "created_at", "updated_at", "user_id", "title") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["url", "https://news.yahoo.com/coronavirus-update-us-warns-against-china-travel-after-who-emergency-declaration-153258056.html?guccounter=1"], ["description", "https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"], ["image", "https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"], ["created_at", "2020-01-31 19:16:04.187193"], ["updated_at", "2020-01-31 19:16:04.187193"], ["user_id", 1], ["title", "c"]]
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 2.2ms | Allocations: 3502)
+
+
+Started GET "/contents" for ::1 at 2020-01-31 19:18:03 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (0.4ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 133ms (Views: 132.0ms | ActiveRecord: 0.7ms | Allocations: 19300)
+
+
+Started GET "/contents" for ::1 at 2020-01-31 19:18:30 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.6ms | Allocations: 19296)
+
+
+Started POST "/contents" for ::1 at 2020-01-31 19:18:46 +0000
+Processing by ContentsController#create as */*
+  Parameters: {"title"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "url"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "image"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "description"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "content"=>{"url"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "description"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "image"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31", "title"=>"https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[36mContent Create (0.5ms)[0m  [1m[32mINSERT INTO "contents" ("url", "description", "image", "created_at", "updated_at", "user_id", "title") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["url", "https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"], ["description", "https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"], ["image", "https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"], ["created_at", "2020-01-31 19:18:46.953835"], ["updated_at", "2020-01-31 19:18:46.953835"], ["user_id", 1], ["title", "https://s.yimg.com/ny/api/res/1.2/q4w4GwZCJl3DCfrYlEvJzA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTcwNQ--/https://s.yimg.com/uu/api/res/1.2/8m0ul4m.Zy0myYAXNcr.JQ--~B/aD0xNDQwO3c9MTQ0MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-01/f90b7670-444d-11ea-bffb-ef47f93cef31"]]
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contents_controller.rb:31:in `create'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 3502)
+
+
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mContent Load (0.6ms)[0m  [1m[34mSELECT "contents".* FROM "contents" ORDER BY "contents"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mContent Destroy (0.8ms)[0m  [1m[31mDELETE FROM "contents" WHERE "contents"."id" = ?[0m  [["id", 20]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT "contents".* FROM "contents" ORDER BY "contents"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mContent Destroy (1.3ms)[0m  [1m[31mDELETE FROM "contents" WHERE "contents"."id" = ?[0m  [["id", 19]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT "contents".* FROM "contents" ORDER BY "contents"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mContent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "contents" WHERE "contents"."id" = ?[0m  [["id", 18]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT "contents".* FROM "contents" ORDER BY "contents"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mContent Destroy (0.4ms)[0m  [1m[31mDELETE FROM "contents" WHERE "contents"."id" = ?[0m  [["id", 17]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/contents" for ::1 at 2020-01-31 19:19:44 +0000
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (0.5ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 49ms (Views: 33.5ms | ActiveRecord: 8.9ms | Allocations: 30071)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mContent Load (0.8ms)[0m  [1m[34mSELECT "contents".* FROM "contents" ORDER BY "contents"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT "contents".* FROM "contents" ORDER BY "contents"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mContent Destroy (3.9ms)[0m  [1m[31mDELETE FROM "contents" WHERE "contents"."id" = ?[0m  [["id", 16]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m

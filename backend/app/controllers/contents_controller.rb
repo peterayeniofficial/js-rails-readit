@@ -8,9 +8,9 @@ class ContentsController < ApplicationController
         content = Content.find(params[:id])
         if content
             render json: {
-                title: content.title, 
-                url: content.url, 
-                image: content.image, 
+                title: content.title,
+                url: content.url,
+                image: content.image,
                 description: content.description,
                 user: content.user,
                 comment: content.comments
@@ -21,15 +21,15 @@ class ContentsController < ApplicationController
         end
     end
 
-    def create 
-        content = Content.new 
+    def create
+        content = Content.new
         content.title = params[:title]
         content.url = params[:url]
-        content.description = params[:image]
+        content.description = params[:description]
         content.image = params[:image]
         content.user_id = 1
-        content.save 
-        if content.save 
+        content.save
+        if content.save
             render json: content
         else
             render json: {message: "Error creating a content"}
@@ -44,14 +44,14 @@ class ContentsController < ApplicationController
         else
             render json: {message: "Can't find this content"}
         end
-        
+
     end
 
-    private 
+    private
 
     def content_params
         params.permit(:title, :url, :image, :description)
     end
-    
-    
+
+
 end

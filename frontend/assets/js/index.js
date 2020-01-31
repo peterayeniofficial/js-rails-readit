@@ -10,6 +10,7 @@ const formHTML = () => {
       <form class="form-content">
         <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h2 class="h3 mb-3 font-weight-normal">Add a story</h2>
+
         <div class="form-group">
             <label for="inputEmail" class="sr-only">Title</label>
         <input type="text" id="inputTitle" class="form-control" placeholder="Title" required autofocus>
@@ -107,7 +108,8 @@ const addContent = () => {
       })
     })
       .then(resp => resp.json())
-      .then(displayCard);
+      .then(content => contentCard(content));
+    addContentForm.reset();
   });
 };
 
