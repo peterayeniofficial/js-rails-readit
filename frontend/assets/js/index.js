@@ -51,38 +51,97 @@ const formHTML = () => {
 };
 
 const contentCard = content => {
-  return `
-    <div class="col-md-4">
-    <div class="card mb-4 shadow-sm">
-      <img  class="bd-placeholder-img card-img-top" src="${content.image}"/>
-      <div class="card-body">
-        <h3>${content.title}</h3>
-        <p class="card-text">${content.description}</p>
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="btn-group">
-            <a class="btn btn-sm btn-outline-secondary" href="${content.url}" target="_blank">View Story from Source</a>
-          </div>
-          <small class="text-muted">By: ${content.user.first_name}</small>
-        </div>
-      </div>
-    </div>
-  </div>
-  `;
+  // return `
+  //   <div class="col-md-4">
+  //   <div class="card mb-4 shadow-sm">
+  //     <img  class="bd-placeholder-img card-img-top" src="${content.image}"/>
+  //     <div class="card-body">
+  //       <h3>${content.title}</h3>
+  //       <p class="card-text">${content.description}</p>
+  //       <div class="d-flex justify-content-between align-items-center">
+  //         <div class="btn-group">
+  //           <a class="btn btn-sm btn-outline-secondary" href="${content.url}" target="_blank">View Story from Source</a>
+  //         </div>
+  //         <div class="btn-group">
+  //           <button class="btn btn-sm btn-outline-secondary">Delete</button>
+  //         </div>
+  //         <small class="text-muted">By: ${content.user.first_name}</small>
+  //       </div>
+  //     </div>
+  //   </div>
+  // </div>
+  // `;
+
+  let outerDiv = document.createElement("div");
+  let cardDiv = document.createElement("div");
+  let cardImage = document.createElement("img");
+  let cardBodyDiv = document.createElement("div");
+  let cardTitle = document.createElement("h1");
+  let cardDescription = document.createElement("p");
+  let buttonOuterDiv = document.createElement("div");
+  let buttonViewDiv = document.createElement("div");
+  let buttonDeleteDiv = document.createElement("div");
+  let viewLink = document.createElement("a");
+  let deleteButton = document.createElement("button");
+  let authorName = document.createElement("small");
+
+  outerDiv.classList.add("col-md-4");
+  cardDiv.classList.add("card", "mb-4", "shadow-sm");
+  cardImage.classList.add("bd-placeholder-img", "card-img-top");
+  cardBodyDiv.classList.add("card-body");
+  cardDescription.classList.add("card-text");
+  buttonOuterDiv.classList.add(
+    "d-flex",
+    "justify-content-between",
+    "align-items-center"
+  );
+  buttonViewDiv.classList.add("btn-group");
+  buttonDeleteDiv.classList.add("btn-group");
+  viewLink.classList.add("btn", "btn-sm", "btn-outline-secondary");
+  authorName.classList.add("text-muted");
+
+  // card image
+  cardImage.src = content.image;
+  // card title
+  cardTitle.innerText = content.title;
+  // card description
+  cardDescription.innerText = content.description;
+
+  // view link button
+  viewLink.href = content.url;
+  viewLink.innerText = "View Story from Source";
+  viewLink.target = "_blank";
+  buttonViewDiv.append(viewLink);
+
+  // delete button
+  deleteButton.innerText = "Delete";
+  deleteButton.classList.add("btn", "btn-sm", "btn-danger");
+  buttonDeleteDiv.append(deleteButton);
+
+  // author Name
+  authorName.innerText = "By: " + content.user.first_name;
+
+  buttonOuterDiv.append(buttonViewDiv, buttonDeleteDiv, authorName);
+  cardBodyDiv.append(cardTitle, cardDescription, buttonOuterDiv);
+  cardDiv.append(cardImage, cardBodyDiv);
+  outerDiv.append(cardDiv);
+
+  return outerDiv;
 };
 
 // append card to HTML
-const displayCard = content => {
+const displayCard = contents => {
   const contentRow = document.querySelector(".row");
-  contentRow.innerHTML += contentCard(content);
+  contents.forEach(content => {
+    contentRow.append(contentCard(content));
+  });
 };
 
 // Get contents
 const getContents = () => {
   fetch("http://localhost:3000/contents")
     .then(resp => resp.json())
-    .then(contents => {
-      contents.forEach(content => displayCard(content));
-    });
+    .then(contents => displayCard(contents));
 };
 
 // Add content
