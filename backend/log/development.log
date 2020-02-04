@@ -3645,3 +3645,141 @@ Processing by ContentsController#index as */*
 Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.5ms | Allocations: 5427)
 
 
+Started GET "/contents" for ::1 at 2020-02-04 00:11:53 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (22.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 262ms (Views: 235.0ms | ActiveRecord: 22.4ms | Allocations: 5428)
+
+
+Started DELETE "/contents/undefined" for ::1 at 2020-02-04 00:12:00 +0000
+Processing by ContentsController#destroy as JSON
+  Parameters: {"id"=>"undefined", "content"=>{}}
+  [1m[36mContent Load (2.1ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:40:in `destroy'
+Completed 404 Not Found in 15ms (ActiveRecord: 2.1ms | Allocations: 568)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Content with 'id'=undefined):
+  
+app/controllers/contents_controller.rb:40:in `destroy'
+Started GET "/contents" for ::1 at 2020-02-04 00:12:05 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (0.4ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 142ms (Views: 138.8ms | ActiveRecord: 0.8ms | Allocations: 5427)
+
+
+Started DELETE "/contents/undefined" for ::1 at 2020-02-04 00:12:14 +0000
+Processing by ContentsController#destroy as JSON
+  Parameters: {"id"=>"undefined", "content"=>{}}
+  [1m[36mContent Load (0.4ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:40:in `destroy'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms | Allocations: 568)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Content with 'id'=undefined):
+  
+app/controllers/contents_controller.rb:40:in `destroy'
+Started GET "/contents" for ::1 at 2020-02-04 00:12:54 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (1.7ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 36ms (Views: 30.8ms | ActiveRecord: 2.8ms | Allocations: 5427)
+
+
+Started DELETE "/contents/undefined" for ::1 at 2020-02-04 00:13:00 +0000
+Processing by ContentsController#destroy as JSON
+  Parameters: {"id"=>"undefined", "content"=>{}}
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:40:in `destroy'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.2ms | Allocations: 568)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Content with 'id'=undefined):
+  
+app/controllers/contents_controller.rb:40:in `destroy'
+Started GET "/contents" for ::1 at 2020-02-04 00:13:44 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (1.8ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 78ms (Views: 72.7ms | ActiveRecord: 2.1ms | Allocations: 5427)
+
+
+Started GET "/contents" for ::1 at 2020-02-04 00:13:48 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (0.6ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 68ms (Views: 59.4ms | ActiveRecord: 5.7ms | Allocations: 5428)
+
+
+Started DELETE "/contents/4" for ::1 at 2020-02-04 00:13:52 +0000
+Processing by ContentsController#destroy as JSON
+  Parameters: {"content_id"=>4, "id"=>"4", "content"=>{}}
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:40:in `destroy'
+  [1m[35m (6.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contents_controller.rb:42:in `destroy'
+  [1m[36mContent Destroy (4.6ms)[0m  [1m[31mDELETE FROM "contents" WHERE "contents"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/contents_controller.rb:42:in `destroy'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contents_controller.rb:42:in `destroy'
+Completed 200 OK in 48ms (Views: 0.7ms | ActiveRecord: 12.3ms | Allocations: 2245)
+
+
+Started GET "/contents" for ::1 at 2020-02-04 00:13:57 +0000
+Processing by ContentsController#index as */*
+  [1m[36mContent Load (0.1ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contents_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.3ms | Allocations: 4273)
+
+

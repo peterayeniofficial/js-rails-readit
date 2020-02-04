@@ -181,9 +181,9 @@ const addContent = () => {
 // Like Images
 const deleteContent = (outerDiv, contentId) => {
   data = {
-    content_id: contentId.id
+    content_id: contentId
   };
-  return fetch(`http://localhost:3000/contents/${contentId.id}`, {
+  return fetch(`http://localhost:3000/contents/${contentId}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
