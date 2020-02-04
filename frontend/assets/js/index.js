@@ -126,6 +126,11 @@ const contentCard = content => {
   cardDiv.append(cardImage, cardBodyDiv);
   outerDiv.append(cardDiv);
 
+  // add event listener
+  deleteButton.addEventListener("click", () =>
+    deleteContent(outerDiv, content.id)
+  );
+
   return outerDiv;
 };
 
@@ -174,18 +179,18 @@ const addContent = () => {
 
 // delete content
 // Like Images
-const deleteContent = contentId => {
+const deleteContent = (outerDiv, contentId) => {
   data = {
-    content_id: contentId
+    content_id: contentId.id
   };
-  return fetch("http://localhost:3000/contents", {
+  return fetch(`http://localhost:3000/contents/${contentId.id}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json"
     },
     body: JSON.stringify(data)
-  }).then(console.log);
+  }).then(outerDiv.remove());
 };
 
 formHTML();
